@@ -1,9 +1,13 @@
 function minDate(dates) {
-  //write you code here
+  let min = dates.reduce((earliest, current) => {
+    let earliestDate = new Date(earliest);
+    let currentDate = new Date(current);
+    return currentDate < earliestDate ? current : earliest;
+  });
+  return min;
 }
 
 // Do not change the code
-
 var dates = [
   "2023/03/01",
   "2023/03/02",
@@ -36,5 +40,4 @@ var dates = [
   "2023/03/29",
   "2023/03/30",
 ];
-
 alert(minDate(dates));
